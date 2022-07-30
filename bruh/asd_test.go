@@ -59,3 +59,53 @@ func TestSubstract(t *testing.T) {
 		}
 	}
 }
+
+func TestDivide(t *testing.T) {
+	testCases := []TestData{
+		{2, 2, 1},
+		{0, 5, 0},
+		{7, 0, 0},
+		{-6, -3, 2},
+		{12, -4, -3},
+	}
+
+	for _, v := range testCases {
+		result := Divide(v.Value1, v.Value2)
+		if result != v.ExpectedValue {
+			t.Errorf(
+				"Divide(%d, %d) FAILED, expected %d but was %d\n",
+				v.Value1, v.Value2, v.ExpectedValue, result,
+			)
+		} else {
+			t.Logf(
+				"Divide(%d, %d) PASSED, got %d\n",
+				v.Value1, v.Value2, v.ExpectedValue,
+			)
+		}
+	}
+}
+
+func TestProduct(t *testing.T) {
+	testCases := []TestData{
+		{2, 2, 4},
+		{0, 5, 0},
+		{7, 0, 0},
+		{-6, -3, 18},
+		{12, -4, -48},
+	}
+
+	for _, v := range testCases {
+		result := Product(v.Value1, v.Value2)
+		if result != v.ExpectedValue {
+			t.Errorf(
+				"Product(%d, %d) FAILED, expected %d but was %d\n",
+				v.Value1, v.Value2, v.ExpectedValue, result,
+			)
+		} else {
+			t.Logf(
+				"Product(%d, %d) PASSED, got %d\n",
+				v.Value1, v.Value2, v.ExpectedValue,
+			)
+		}
+	}
+}

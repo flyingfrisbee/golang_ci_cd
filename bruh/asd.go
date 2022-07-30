@@ -9,6 +9,9 @@ func Substract(x, y int) int {
 }
 
 func Divide(x, y int) int {
+	if y == 0 {
+		return 0
+	}
 	return x / y
 }
 
