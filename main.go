@@ -1,9 +1,11 @@
 package main
 
 import (
+	"fmt"
 	"github/gibberish/utils"
 	"log"
 	"net/http"
+	"os"
 
 	"github.com/gorilla/mux"
 )
@@ -16,7 +18,9 @@ func main() {
 	r := mux.NewRouter()
 	r.HandleFunc("/one", HandlerOne)
 
-	err := http.ListenAndServe(":8080", r)
+	port := os.Getenv("PORT")
+
+	err := http.ListenAndServe(fmt.Sprintf(":%s", port), r)
 	if err != nil {
 		log.Println(err)
 		return
