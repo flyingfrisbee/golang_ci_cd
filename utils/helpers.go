@@ -32,5 +32,8 @@ func WriteResponse(
 
 	w.Header().Set("content-type", "application/json")
 	w.WriteHeader(statusCode)
-	w.Write(jsonBytes)
+	_, err = w.Write(jsonBytes)
+	if err != nil {
+		log.Println(err)
+	}
 }
