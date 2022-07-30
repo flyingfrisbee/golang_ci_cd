@@ -91,7 +91,7 @@ func TestProduct(t *testing.T) {
 		{0, 5, 0},
 		{7, 0, 0},
 		{-6, -3, 18},
-		{12, -4, -47},
+		{12, -4, -48},
 	}
 
 	for _, v := range testCases {
